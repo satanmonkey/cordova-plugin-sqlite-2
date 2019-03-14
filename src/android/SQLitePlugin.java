@@ -187,7 +187,7 @@ public class SQLitePlugin extends CordovaPlugin {
       if (":memory:".equals(name)) {
         database = SQLiteDatabase.openOrCreateDatabase(name, null);
       } else {
-        File file = new File(cordova.getActivity().getFilesDir(), name);
+        File file = new File(cordova.getActivity().getExternalFilesDir(null), name);
         database = SQLiteDatabase.openOrCreateDatabase(file, null);
       }
       DATABASES.put(name, database);
